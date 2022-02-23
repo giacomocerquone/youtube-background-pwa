@@ -13,7 +13,7 @@ This means you can't point this to long videos (maximum will be about 1 minute).
 ## Extra
 
 Why returning directly the node stream is the only solution?
-Because any youtube downloader will give you a googlevideo link accessible only by the same ip that requested it. Therefore, I couldn't just return the video url.
+Because any youtube downloader will give you a googlevideo link accessible only by the same ip that requested it. Therefore, I couldn't just return the video url and then let the client ask for the audio.
 
 ## The interesting bit
 
