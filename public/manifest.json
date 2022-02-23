@@ -8,11 +8,12 @@
   "scope": "/",
   "start_url": "/",
   "share_target": {
-    "action": "/share",
+    "action": "/",
+    "method": "GET",
     "params": {
       "title": "title",
       "text": "text",
-      "url": "url"
+      "url": "query"
     }
   },
   "icons": [
