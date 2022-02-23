@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const youtubedl = require("youtube-dl-exec");
+const ytdl = require("ytdl-core");
 
 export default async function handler(req, res) {
   const { link } = req.query;
@@ -8,18 +8,13 @@ export default async function handler(req, res) {
   if (!link) return res.status(400).json({ error: "There is no link bro" });
 
   try {
-    const output = await youtubedl(link, {
-      dumpSingleJson: true,
-      noWarnings: true,
-      noCallHome: true,
-      noCheckCertificate: true,
-      preferFreeFormats: true,
-      youtubeSkipDashManifest: true,
-      extractAudio: true,
-      audioFormat: "mp3",
+    const info = await ytdl.getInfo(link);
+    const audioFormat = ytdl.chooseFormat(info.formats, {
+      filter: "audioonly",
+      quality: "highest",
     });
 
-    res.status(200).json(output);
+    res.status(200).json(audioFormat);
   } catch (e) {
     console.log(e);
     res.status(500).json({ error: "Something went wrong" });
