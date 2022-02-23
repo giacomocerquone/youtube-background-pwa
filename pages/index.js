@@ -6,10 +6,9 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {JSON.stringify(query)}
-      {query.link && (
+      {query.text && (
         <audio controls>
-          <source src={`/api/stream?link=${query.link}`} type="audio/mpeg" />
+          <source src={`/api/stream?link=${query.text}`} type="audio/mpeg" />
           Your browser does not support the audio tag.
         </audio>
       )}
