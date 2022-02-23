@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {document?.location?.href}
+      {JSON.stringify(query)}
       {query.link && (
         <audio controls>
           <source src={`/api/stream?link=${query.link}`} type="audio/mpeg" />
