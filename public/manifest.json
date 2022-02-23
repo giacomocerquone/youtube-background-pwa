@@ -10,7 +10,9 @@
   "share_target": {
     "action": "/share",
     "params": {
-      "link": "link"
+      "title": "title",
+      "text": "text",
+      "url": "url"
     }
   },
   "icons": [
