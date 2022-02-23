@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PWA to handly runs youtube in background
 
-## Getting Started
+This is an experiment using next.js and ytdl-core to be able to listen to youtube videos in background.
+It's a PWA and leverages the [share-target](https://web.dev/web-share-target/) feature supported by some browsers.
 
-First, run the development server:
+# Why it doesn't work?
 
-```bash
-npm run dev
-# or
-yarn dev
+Basically I've deployed it on vercel and if you look closely at my stream endpoint implementation, I'm using [ytdl-core](https://github.com/fent/node-ytdl-core) to directly return a node stream to be played by the audio html tag. This means it'll use bandwith, but vercel cut it to 5mb, as soon as they're reached it'll close the connection.
+
+This means you can't point this to long videos (maximum will be about 1 minute).
+
+## Extra
+
+Why returning directly the node stream is the only solution?
+Because any youtube downloader will give you a googlevideo link accessible only by the same ip that requested it. Therefore, I couldn't just return the video url.
+
+## The interesting bit
+
+is the following one in the manifest.json
+
+```json
+"share_target": {
+  "action": "/",
+  "method": "GET",
+  "params": {
+    "title": "title",
+    "text": "text",
+    "url": "query"
+  }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Screenshots
