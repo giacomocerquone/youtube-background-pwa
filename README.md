@@ -32,3 +32,7 @@ is the following one in the manifest.json
 ```
 
 ## Screenshots
+
+![photo_2022-02-23_23-49-21](https://user-images.githubusercontent.com/9303791/155426186-4a4c26f9-b3e2-495e-9630-f1f27266f1e5.jpg)
+![photo_2022-02-23_23-49-24](https://user-images.githubusercontent.com/9303791/155426188-d600d229-1a87-4023-973a-0c9344330bd3.jpg)
+
