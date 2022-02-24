@@ -6,7 +6,7 @@ deployed here -> [https://ytbg-lac.vercel.app/](https://ytbg-lac.vercel.app/)
 This is an experiment using next.js and ytdl-core to be able to listen to youtube videos in background.
 It's a PWA and leverages the [share-target](https://web.dev/web-share-target/) feature supported by some browsers.
 
-# Why it doesn't work?
+# Why it doesn't always work?
 
 Basically I've deployed it on vercel and if you look closely at my stream endpoint implementation, I'm using [ytdl-core](https://github.com/fent/node-ytdl-core) to directly return a node stream to be played by the audio html tag. This means it'll use bandwith, but vercel cut it to 5mb, as soon as they're reached it'll close the connection.
 
