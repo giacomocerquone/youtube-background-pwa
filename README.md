@@ -1,6 +1,8 @@
 # PWA to handly runs youtube in background
 
-[https://ytbg-lac.vercel.app/](https://ytbg-lac.vercel.app/)
+deployed here -> [https://ytbg-lac.vercel.app/](https://ytbg-lac.vercel.app/)
+
+
 This is an experiment using next.js and ytdl-core to be able to listen to youtube videos in background.
 It's a PWA and leverages the [share-target](https://web.dev/web-share-target/) feature supported by some browsers.
 
