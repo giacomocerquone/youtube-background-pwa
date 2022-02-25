@@ -8,14 +8,14 @@ It's a PWA and leverages the [share-target](https://web.dev/web-share-target/) f
 
 # Why it doesn't always work?
 
-Basically I've deployed it on vercel and if you look closely at my stream endpoint implementation, I'm using [ytdl-core](https://github.com/fent/node-ytdl-core) to directly return a node stream to be played by the audio html tag. This means it'll use bandwith, but [vercel cut it to 5mb](https://vercel.com/support/articles/how-to-bypass-vercel-5mb-body-size-limit-serverless-functions), as soon as they're reached it'll close the connection.
+Basically I've deployed it on vercel and if you look closely at my `/api/stream` endpoint implementation, I'm using [ytdl-core](https://github.com/fent/node-ytdl-core) to directly return a node stream to be played by the audio html tag. This means it'll use bandwith, but [vercel cuts it to 5mb](https://vercel.com/support/articles/how-to-bypass-vercel-5mb-body-size-limit-serverless-functions), as soon as the 5mb are reached it'll close the connection.
 
-This means you can't point the app to long videos (maximum will be about 1 minute, depending also on the audio quality of that video).
+This means you can't point the app to long videos (maximum will be about 1 minute give or take, depending also on the audio quality of that video).
 
 ## Extra
 
 Why returning directly the node stream is the only solution?
-Because any youtube downloader will give you a googlevideo link accessible only by the same ip that requested it (you can find this info also from within the readme of ytdl).
+Because any youtube downloader will give you a googlevideo link accessible only by the same ip that requested it (you can find this info also within the readme of ytdl).
 Therefore, I couldn't just return the video url and then let the client download the audio.
 
 ## The interesting bit
