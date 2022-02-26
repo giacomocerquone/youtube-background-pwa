@@ -38,7 +38,7 @@ export default function Home() {
         Leave a star to the repo if you like the project 😁👋🏻
       </p>
       <p style={{ backgroundColor: "yellow" }}>
-        WARNING: on this vercel hosted URL, videos longer than 30seconds
+        WARNING: on this vercel hosted URL, videos longer than 1/2/3 minutes
         won&apos;t work.
       </p>
       <a
