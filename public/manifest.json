@@ -1,6 +1,6 @@
 {
-  "name": "YouTube background",
-  "short_name": "ytbg",
+  "name": "YouTube background pwa",
+  "short_name": "ytbg-pwa",
   "theme_color": "#ffffff",
   "background_color": "#004740",
   "display": "standalone",
@@ -13,7 +13,7 @@
     "params": {
       "title": "title",
       "text": "text",
-      "url": "query"
+      "url": "url"
     }
   },
   "icons": [

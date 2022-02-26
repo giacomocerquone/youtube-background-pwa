@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>YouTube background</title>
+        <title>YouTube background pwa</title>
 
         <link rel="manifest" href="/manifest.json" />
         <link href="/favicon.ico" rel="icon" type="image/png" sizes="16x16" />
