@@ -33,13 +33,18 @@ export default function Home() {
     <div className={styles.container}>
       <p>
         Install this PWA and then share a YouTube video with this PWA to be able
-        to listen to the audio in background
+        to listen to the audio in background.
+        <br />
+        Leave a star to the repo if you like the project 😁👋🏻
       </p>
       <p style={{ backgroundColor: "yellow" }}>
         WARNING: on this vercel hosted URL, videos longer than 30seconds
         won&apos;t work.
       </p>
-      <a href="" style={{ margin: "1rem" }}>
+      <a
+        href="https://github.com/giacomocerquone/youtube-background-pwa#why-it-doesnt-always-work"
+        style={{ margin: "1rem" }}
+      >
         See here why
       </a>
       {vidId && (
